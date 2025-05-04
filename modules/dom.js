@@ -10,9 +10,13 @@ export const WeatherUI = {
 
   updateWeatherDisplay: (data) => {
     document.querySelector('#city-name').textContent = data.name;
-    document.querySelector('#temperature').textContent = `${data.temp}oC`;
+    document.querySelector('#country-code').textContent = data.countryCode;
+    document.querySelector('#temperature').textContent = `${data.temp}°C`;
     document.querySelector('#description').textContent = data.description;
-    document.querySelector('#humidity').textContent = data.humidity;
+    document.querySelector('#humidity').textContent = data.icon;
+    document.querySelector('#wind-speed').textContent = data.windSpeed;
+    document.querySelector('#sunrise').textContent = data.sunrise;
+
     document.querySelector('#weather-display').classList.remove('hidden');
   }
 }

@@ -1,5 +1,5 @@
 export const kelvinToCelsius = (kelvin) => {
-  return Math.random(kelvin - 273.15)
+  return Math.round(kelvin - 273.15)
 }
 
 // Maps API's "condition" to emoji
