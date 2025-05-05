@@ -33,8 +33,10 @@
         <button type="submit"><i class="fas fa-search"></i> Get Weather</button>
       </form>
       <div id="weather-display" class="hidden">
-        <h2 id="city-name"></h2>
-        <p id="country-code"></p>
+        <div class="flex-column">
+          <h2 id="city-name"></h2>
+          <p id="country-code"></p>
+        </div>
         <p id="temperature"></p>
         <p id="description"></p>
         <p id="humidity"></p>
@@ -42,8 +44,8 @@
         <p id="sunrise"></p>
         <p id="sunset"></p>
       </div>
-      <small id="error-message" class="error-message hidden"></small>
     </div>
+    <small id="error-message" class="error-message hidden"></small>
   </header>
 </body>
 

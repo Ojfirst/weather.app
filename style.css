@@ -17,9 +17,17 @@ header {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background: rgba(0, 10, 36, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 1000;
 }
 
 nav ul {
@@ -54,6 +62,11 @@ div.social-media {
   margin: 0 auto;
  max-width: 1200px;
 text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+  z-index: 1; /* Ensure the container is above the background image */
+  top: 150px; /* Adjust this value to match the height of your nav */
 }
 #city-form {
   display: flex;
@@ -64,26 +77,49 @@ text-align: center;
 }
 #city-input {
   width: 60%;
+  font-size: 18px;
   max-width: 400px;
   padding: 8px;
   border-radius: 5px;
   outline: none;
 }
+
+#weather-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 5px;
+  background: #333;
+  margin-top: 2rem;
+  overflow: auto;
+}
+
+
 button {
   padding: 8px 15px;
   cursor: pointer;
 }
-#weather-display {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 5px;
+
+button i {
+  margin-right: 5px;
 }
+
 .hidden {
   display: none;
 }
 .error-message {
+  background: #ccc;
   color: red;
+  padding: 0.5rem;
+  margin-top: 2rem;
 }
-button i {
-  margin-right: 5px;
+
+@media screen and (max-width: 465px) {
+
 }
+
+
