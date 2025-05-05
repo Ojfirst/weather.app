@@ -1,4 +1,8 @@
 /* styles.css */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,6 +33,7 @@ nav {
   left: 0;
   right: 0;
   height: 70px;
+  transition: background 0.3s ease;
   z-index: 1000;
 }
 
@@ -93,12 +98,17 @@ text-align: center;
   background: #222;
   margin-top: 2rem;
   overflow: auto;
+  transition: all 0.3s ease;
+  max-width: 100%;
 }
 
 
 button {
+  border: none;
+  border-radius: 5px;
   padding: 8px 15px;
   cursor: pointer;
+
 }
 
 button i {
@@ -137,8 +147,9 @@ button i {
   }
 
   button {
-    padding: 4px 5px;
+    padding: 3px 5px;
     cursor: pointer;
+    font-size: 14px;
   }
   
   button i {
