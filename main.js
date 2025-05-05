@@ -1,6 +1,6 @@
 import { fetchWeatherData } from './modules/api.js';
 import { WeatherUI } from './modules/dom.js';
-import { sanitizerInput , sunrise } from './modules/validation.js';
+import { sanitizerInput , timeToString } from './modules/validation.js';
 import { kelvinToCelsius, getWeatherIcon } from './modules/utils.js';
 
 const init = () => {
@@ -21,9 +21,11 @@ const init = () => {
         description: rawData.weather[0].description,
         icon: getWeatherIcon(rawData.weather[0].main),
         windSpeed: `${rawData.wind.speed} m/s`,
-        sunrise: sunrise(rawData.sys.sunrise),
-        sunset: new Date(rawData.sys.sunset * 1000).toLocaleTimeString()
+        sunrise: timeToString(rawData.sys.sunrise),
+        sunset: timeToString(rawData.sys.sunset)
       };
+      console.log('sunrise:', processedData.sunrise);
+      console.log('sunrise:', processedData.sunset);
       WeatherUI.updateWeatherDisplay(processedData);
     } catch (error) {
       WeatherUI.showError(error.message)

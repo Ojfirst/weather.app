@@ -4,7 +4,7 @@ export const sanitizerInput = (rawText) => {
   return rawText.trim().replace(/[^a-zA-Z ]/g, '');
 }
 
-export const sunrise = (data) => {
+export const timeToString = (data) => {
   if (typeof data !== 'number') return '';
   return new Date(data * 1000).toLocaleTimeString()
 }

@@ -16,6 +16,7 @@ export const WeatherUI = {
     document.querySelector('#humidity').textContent = data.icon;
     document.querySelector('#wind-speed').textContent = data.windSpeed;
     document.querySelector('#sunrise').textContent = data.sunrise;
+    document.querySelector('#sunset').textContent = data.sunset;
 
     document.querySelector('#weather-display').classList.remove('hidden');
   }
