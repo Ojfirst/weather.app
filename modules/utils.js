@@ -11,4 +11,14 @@ export const getWeatherIcon = (condition)  => {
   };
   return icons[condition.toLowerCase()] || '🌐';
 }
-// Like a vending machine - button A1 always gives chips
+
+// Time converter
+export const timeToLocalTime = (data) => {
+  if (typeof data !== 'number') return '';
+  return new Date(data * 1000).toLocaleTimeString()
+}
+
+// Message sanitizer
+export const addMessage =  (message) => {
+  return message;
+}

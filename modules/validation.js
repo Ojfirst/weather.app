@@ -4,7 +4,14 @@ export const sanitizerInput = (rawText) => {
   return rawText.trim().replace(/[^a-zA-Z ]/g, '');
 }
 
-export const timeToString = (data) => {
+
+// Time converter
+export const timeToLocalTime = (data) => {
   if (typeof data !== 'number') return '';
   return new Date(data * 1000).toLocaleTimeString()
+}
+
+// Message sanitizer
+export const addMessage =  (message) => {
+  return message;
 }

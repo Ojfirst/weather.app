@@ -1,7 +1,10 @@
+
+// This is the main entry point for the weather application. It initializes the app, sets up event listeners, and handles user input.
+// Importing necessary modules and functions
 import { fetchWeatherData } from './modules/api.js';
 import { WeatherUI } from './modules/dom.js';
-import { sanitizerInput , timeToString } from './modules/validation.js';
-import { kelvinToCelsius, getWeatherIcon } from './modules/utils.js';
+import { sanitizerInput } from './modules/validation.js';
+import { kelvinToCelsius, getWeatherIcon, addMessage, timeToLocalTime } from './modules/utils.js';
 
 const init = () => {
   const form = document.querySelector('#city-form');
@@ -13,7 +16,7 @@ const init = () => {
     const city = sanitizerInput(userInput.value);
 
     try {
-      const rawData = await fetchWeatherData(city);
+      const rawData = await fetchWeatherData(city); // (fetchWeatherData) From  api.js
       const processedData = {
         name : city,
         countryCode: rawData.sys.country,
@@ -21,11 +24,12 @@ const init = () => {
         description: rawData.weather[0].description,
         icon: getWeatherIcon(rawData.weather[0].main),
         windSpeed: `${rawData.wind.speed} m/s`,
-        sunrise: timeToString(rawData.sys.sunrise),
-        sunset: timeToString(rawData.sys.sunset)
+        sunrise: timeToLocalTime(rawData.sys.sunrise),
+        sunset: timeToLocalTime(rawData.sys.sunset)
       };
-      console.log('sunrise:', processedData.sunrise);
-      console.log('sunrise:', processedData.sunset);
+      console.log(addMessage('Sunrise: ' + processedData.sunrise));
+      console.log(addMessage('Sunset: ' + processedData.sunset));
+
       WeatherUI.updateWeatherDisplay(processedData);
     } catch (error) {
       WeatherUI.showError(error.message)
