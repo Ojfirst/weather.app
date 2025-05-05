@@ -1,3 +1,10 @@
+// Sanitiazer
+export const sanitizerInput = (rawText) => {
+  if (typeof rawText !== 'string') return '';
+  return rawText.trim().replace(/[^a-zA-Z ]/g, '');
+}
+
+// Kelvin to celsius converter
 export const kelvinToCelsius = (kelvin) => {
   return Math.round(kelvin - 273.15)
 }

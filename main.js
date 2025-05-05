@@ -3,8 +3,8 @@
 // Importing necessary modules and functions
 import { fetchWeatherData } from './modules/api.js';
 import { WeatherUI } from './modules/dom.js';
-import { sanitizerInput } from './modules/validation.js';
-import { kelvinToCelsius, getWeatherIcon, addMessage, timeToLocalTime } from './modules/utils.js';
+import { cityValidator } from './modules/validation.js';
+import { kelvinToCelsius, getWeatherIcon, addMessage, timeToLocalTime, sanitizerInput } from './modules/utils.js';
 
 const init = () => {
   const form = document.querySelector('#city-form');
@@ -16,7 +16,9 @@ const init = () => {
     const city = sanitizerInput(userInput.value);
 
     try {
+      cityValidator(city);
       const rawData = await fetchWeatherData(city); // (fetchWeatherData) From  api.js
+
       const processedData = {
         name : city,
         countryCode: rawData.sys.country,
@@ -27,13 +29,13 @@ const init = () => {
         sunrise: timeToLocalTime(rawData.sys.sunrise),
         sunset: timeToLocalTime(rawData.sys.sunset)
       };
-      console.log(addMessage('Sunrise: ' + processedData.sunrise));
-      console.log(addMessage('Sunset: ' + processedData.sunset));
 
       WeatherUI.updateWeatherDisplay(processedData);
     } catch (error) {
       WeatherUI.showError(error.message)
     }
+
+    userInput.value = '';
   });
 };
 
