@@ -108,7 +108,7 @@ button {
   border-radius: 5px;
   padding: 8px 15px;
   cursor: pointer;
-
+  height: 40px;
 }
 
 button i {
@@ -147,7 +147,7 @@ button i {
   }
 
   button {
-    padding: 3px 5px;
+    padding: 3px 10px;
     cursor: pointer;
     font-size: 14px;
   }
