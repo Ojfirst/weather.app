@@ -47,6 +47,10 @@ nav ul li {
   display: inline;
 }
 
+nav ul li a {
+  color: #ccc;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -86,6 +90,16 @@ text-align: center;
   outline: none;
 }
 
+#city-input ::placeholder {
+  color: #ccc;
+}
+#city-input:focus {
+  border: 2px solid #099;
+  transition: all 0.3s ease;
+}
+
+
+
 #weather-display {
   display: flex;
   flex-direction: row;
@@ -106,13 +120,27 @@ text-align: center;
 button {
   border: none;
   border-radius: 5px;
-  padding: 8px 15px;
+  padding: 5px 10px;
   cursor: pointer;
   height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #d0e2e2;
+  color: #000;
+}
+button:hover {
+  background: #a1b7b7;
+  color: #292329;
+  transition: all 0.3s ease;
 }
 
 button i {
   margin-right: 5px;
+}
+
+.spc-color {
+  color: orangered;
+  font-weight: bolder;
 }
 
 .hidden {
@@ -144,16 +172,6 @@ button i {
 
   .container h1 {
     font-size: 2rem;
-  }
-
-  button {
-    padding: 3px 10px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  button i {
-    margin-right: 5px;
   }
 }
 
