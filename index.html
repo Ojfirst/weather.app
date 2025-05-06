@@ -30,8 +30,9 @@
       <h1>Find your city weather</h1>
       <form id="city-form">
         <input type="text" id="city-input" placeholder="Enter city" required>
-        <button type="submit"><i class="fas fa-search"></i> Get Weather</button>
+        <button type="submit" id="get-weather-btn"><i class="fas fa-search"></i> Get Weather</button>
       </form>
+
       <div id="weather-display" class="hidden">
         <div class="flex-column">
           <h2 id="city-name"></h2>
@@ -45,6 +46,7 @@
         <p id="sunset"></p>
       </div>
     </div>
+    
     <small id="error-message" class="error-message hidden"></small>
   </header>
 </body>

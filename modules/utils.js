@@ -29,3 +29,11 @@ export const timeToLocalTime = (data) => {
 export const addMessage =  (message) => {
   return message;
 }
+
+// Disable button
+export const disableBtn = (btn) => btn.setAttribute('disabled', '');
+
+// Enable button
+export const enableBtn = (btn) => btn.removeAttribute('disabled')
+
+

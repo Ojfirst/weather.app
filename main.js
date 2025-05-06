@@ -4,15 +4,31 @@
 import { fetchWeatherData } from './modules/api.js';
 import { WeatherUI } from './modules/dom.js';
 import { cityValidator } from './modules/validation.js';
-import { kelvinToCelsius, getWeatherIcon, addMessage, timeToLocalTime, sanitizerInput } from './modules/utils.js';
+import { kelvinToCelsius, getWeatherIcon, timeToLocalTime, sanitizerInput, disableBtn, enableBtn } from './modules/utils.js';
+
+
+
 
 const init = () => {
   const form = document.querySelector('#city-form');
+  const submitButton = document.querySelector('#get-weather-btn');
+  const userInput = document.querySelector('#city-input');
+
+  // Set initial button state
+  disableBtn(submitButton);
+
+  userInput.addEventListener('input', (e) => {
+  if (sanitizerInput(userInput.value).length > 0) {
+    enableBtn(submitButton);
+  }
+  else {
+    disableBtn(submitButton);
+  }
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const userInput = document.querySelector('#city-input');
     const city = sanitizerInput(userInput.value);
 
     try {
@@ -38,6 +54,10 @@ const init = () => {
     userInput.value = '';
   });
 };
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
