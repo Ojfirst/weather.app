@@ -253,6 +253,13 @@ footer a:hover {
     justify-content: center;
     align-items: center;
   }
+
+  footer p:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 
