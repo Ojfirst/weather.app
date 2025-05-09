@@ -90,6 +90,10 @@ div.social-media {
   gap: 10px;;
 }
 
+div.social-media .fab:hover {
+ opacity: 0.5;
+}
+
 
 .container {
   margin: 0 auto;

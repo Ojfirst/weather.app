@@ -52,6 +52,7 @@ const init = () => {
     }
 
     userInput.value = '';
+    disableBtn(submitButton);
   });
 };
 
