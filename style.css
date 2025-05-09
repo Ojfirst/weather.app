@@ -129,19 +129,19 @@ button {
   color: #000;
 }
 button:hover {
-  background: #a1b7b7;
+  /* background: #a1b7b7;
   color: #292329;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; */
 }
 
 button i {
   margin-right: 5px;
 }
 
-.spc-color {
+/* .spc-color {
   color: orangered;
   font-weight: bolder;
-}
+} */
 
 .hidden {
   display: none;

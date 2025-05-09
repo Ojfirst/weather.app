@@ -31,9 +31,17 @@ export const addMessage =  (message) => {
 }
 
 // Disable button
-export const disableBtn = (btn) => btn.setAttribute('disabled', '');
+export const disableBtn = (btn) => {
+  btn.disabled = true;
+  btn.style.opacity = '0.5';
+  btn.style.cursor = 'not allowed';
+};
 
-// Enable button
-export const enableBtn = (btn) => btn.removeAttribute('disabled')
+// Disable button
+export const enableBtn = (btn) => {
+  btn.disabled = false;
+  btn.style.opacity = '1';
+  btn.style.cursor = 'pointer';
+};
 
 

@@ -18,12 +18,12 @@ const init = () => {
   disableBtn(submitButton);
 
   userInput.addEventListener('input', (e) => {
-  if (sanitizerInput(userInput.value).length > 0) {
-    enableBtn(submitButton);
-  }
-  else {
-    disableBtn(submitButton);
-  }
+    if (sanitizerInput(userInput.value).length > 0) {
+      enableBtn(submitButton);
+    }
+    else {
+      disableBtn(submitButton);
+    }
   });
 
   form.addEventListener('submit', async (e) => {
