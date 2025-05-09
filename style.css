@@ -1,4 +1,12 @@
 /* styles.css */
+:root {
+  --max-width: 100px;
+  --spec-color: orangered;
+  --spec-color-two: #ccc;
+  --max-width: 1200px;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #222222;
+}
+
+p {
+  margin: 10px;
 }
 
 
@@ -21,18 +34,24 @@ header {
   width: 100vw;
 }
 
-nav {
+header nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(0, 10, 36, 0.5);
+  /* max-width: var(--max-width); */
+  margin: 0 auto;
+  padding-right: 80px;
+  padding-left: 80px;
+  background: #000a2480;
+  border-bottom: 1px solid #182e50;
+  
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 100px;
   transition: background 0.3s ease;
   z-index: 1000;
 }
@@ -51,6 +70,14 @@ nav ul li a {
   color: #ccc;
 }
 
+nav ul li a:hover {
+  border-bottom: 2px solid var(--spec-color);
+}
+
+nav ul li a:active {
+  opacity: 0.5;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -66,13 +93,13 @@ div.social-media {
 
 .container {
   margin: 0 auto;
- max-width: 1200px;
-text-align: center;
+  max-width: 1200px;
+  text-align: center;
   padding: 20px;
   color: white;
   position: relative;
   z-index: 1; /* Ensure the container is above the background image */
-  top: 150px; /* Adjust this value to match the height of your nav */
+  top: 200px; /* Adjust this value to match the height of your nav */
 }
 #city-form {
   display: flex;
@@ -90,7 +117,7 @@ text-align: center;
   outline: none;
 }
 
-#city-input ::placeholder {
+#city-input::placeholder {
   color: #ccc;
 }
 #city-input:focus {
@@ -129,19 +156,25 @@ button {
   color: #000;
 }
 button:hover {
-  /* background: #a1b7b7;
+  background: #a1b7b7;
   color: #292329;
-  transition: all 0.3s ease; */
+  transition: all 0.3s ease;
 }
 
 button i {
   margin-right: 5px;
 }
 
-/* .spc-color {
-  color: orangered;
-  font-weight: bolder;
-} */
+/* Utilities */
+.spc-color {
+  color: var(--spec-color);
+  font-weight: bold;
+}
+
+.spc-color-two {
+  color: var(--spec-color-two);
+  font-weight: 700;
+}
 
 .hidden {
   display: none;
@@ -151,6 +184,30 @@ button i {
   color: red;
   padding: 0.5rem;
   margin-top: 2rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: #222222;
+  color: #eaffff;
+  padding: 2rem;
+  border-top: 1px solid #ccc;
+}
+
+footer nav a {
+    margin: 10px;
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+footer a:hover {
+  opacity: 0.5;
+  transition: all .3s ease;
 }
 
 @media screen and (max-width: 465px) {
@@ -172,6 +229,25 @@ button i {
 
   .container h1 {
     font-size: 2rem;
+  }
+
+  footer nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: px;
+    padding: 5px;
+    color: #ccc;
+    margin-top: 0;
+  }
+
+  footer p:first-child {
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
