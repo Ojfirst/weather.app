@@ -180,6 +180,10 @@ button i {
   font-weight: 700;
 }
 
+.spc-color-three {
+  color: goldenrod
+}
+
 .hidden {
   display: none;
 }
@@ -197,7 +201,7 @@ footer {
   align-items: center;
   margin: 0 auto;
   background: #222222;
-  color: #eaffff;
+  color: white;
   padding: 2rem;
   border-top: 1px solid #ccc;
 }
@@ -214,7 +218,7 @@ footer a:hover {
   transition: all .3s ease;
 }
 
-@media screen and (max-width: 465px) {
+@media screen and (max-width: 500px) {
   nav {
     flex-direction: column;
     justify-content: center;

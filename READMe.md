@@ -50,6 +50,33 @@ This app reflects where I am right now: *comfortable with core JS, diving deeper
 
 ---
 
+## *📥 Installation*  
+1. Clone the repo:  
+   bash  
+   git clone https://github.com/ojfirst/weather-app.git  
+     
+2. Install dependencies:  
+   bash  
+   npm install  
+     
+3. Get an API key from [OpenWeatherMap](https://openweathermap.org/api) and add it to a .env file:  
+   env  
+   VITE_API_KEY= 'bd9d7d44f92d4f21f219a23eecee5e6a' 
+     
+4. Run the dev server:  
+   bash  
+   npm run dev  
+     
+
+---
+
+## *🔮 Future Improvements*  
+- [ ] Add a 5-day forecast feature.  
+- [ ] Implement geolocation for automatic weather detection.  
+- [ ] Add unit testing (Jest) for core functions.  
+
+---
+
 ## *💡 Why This Project Stands Out*  
 Unlike tutorial-based weather apps, this one:  
 - *Uses zero dependencies* (no jQuery, React, etc.)—just vanilla JS.  
