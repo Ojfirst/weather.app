@@ -34,7 +34,7 @@ const init = () => {
     try {
       cityValidator(city);
       const rawData = await fetchWeatherData(city); // (fetchWeatherData) From  api.js
-
+      console.log(rawData);
       const processedData = {
         name : city,
         countryCode: rawData.sys.country,
